@@ -8,31 +8,32 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class LibraryTest {
-    @Test 
-    public void testSomeLibraryMethod() {
-      	
+
+	@Test
+	public void whenTheBooksCollectionHasNoBooksThenTheResultWillBeZero(){
     	float result = PotterCalculator.calculate(new ArrayList<>());
     	
-    	assertThat(result,is(equalTo(0f)));
-
+    	assertThat(result,is(equalTo(0f)));	
+	}
+	
+	@Test 
+    public void ifThereIsOnlyOneBookOnTheBasketTheResultWillBeAllwaysEight() {
+      	
+    	float result = 0;
+    	    	
     	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(1,1)));
-    	
     	assertThat(result,is(equalTo(8f)));
 
-    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(2,1)));
-    	
+    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(2,1)));    	
     	assertThat(result,is(equalTo(8f)));
     	
     	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(3,1)));
-    	
     	assertThat(result,is(equalTo(8f)));
 
-    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(4,1)));
-    	
+    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(4,1)));    	
     	assertThat(result,is(equalTo(8f)));
     	
-    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(5,1)));
-    	
+    	result = PotterCalculator.calculate(Arrays.asList(new BooksAndQuantity(5,1)));    	
     	assertThat(result,is(equalTo(8f)));
     }
 }
